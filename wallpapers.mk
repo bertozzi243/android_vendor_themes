@@ -16,7 +16,9 @@
 
 DU_DEVICE := $(patsubst %f,%,$(subst du_,,$(TARGET_PRODUCT)))
 
-ifneq ($(filter blueline bonito,$(DU_DEVICE)),)
+ifneq ($(filter oneplus3,$(DU_DEVICE)),)
+DEVICE_PACKAGE_OVERLAYS += vendor/themes/wallpapers/1080x1920/
+else ifneq ($(filter blueline bonito,$(DU_DEVICE)),)
 DEVICE_PACKAGE_OVERLAYS += vendor/themes/wallpapers/1080x2280/
 else ifneq ($(filter marlin sailfish wahoo,$(DU_DEVICE)),)
 DEVICE_PACKAGE_OVERLAYS += vendor/themes/wallpapers/1440x2560/
